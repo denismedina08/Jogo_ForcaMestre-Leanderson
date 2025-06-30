@@ -1,12 +1,10 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Palavra {
 
     private final List<String> palavras =
-            Arrays.asList("faca", "garfo", "colher", "prato", "pote", "tigela", "panela");
+            Arrays.asList("monito", "garfo", "colher", "prato", "postre", "mestre", "milho", "crisma", "cholito", "barca");
     private String palavraSecreta;
     public String palavraComChutes;
 
@@ -17,6 +15,8 @@ public class Palavra {
         this.palavraSecreta = this.palavras.get(randIndex);
         this.palavraComChutes = "_".repeat(this.palavraSecreta.length());
     }
+
+    //Revelar Letra
 
     public void revelarLetra(String letra) {
         for (int i = 0; i < palavraSecreta.length(); i++) {

@@ -13,7 +13,7 @@ public class Jogo {
 
     public void iniciarJogo() {
         List<String> chutes = new ArrayList<>();
-        var numeroChutes = 10;
+        var numeroChutes = 12;
 
         this.palavra.gerarPalavraSecreta();
 
@@ -23,11 +23,11 @@ public class Jogo {
         System.out.println(this.palavra.getPalavraComChutes() + "\n");
 
         while (!this.palavra.palavraCompleta() && chutes.size() < numeroChutes) {
-            System.out.println("Digite seu chute: ");
+            System.out.println("Informe uma Letra: ");
             String chute = scanner.nextLine();
 
             if (chutes.contains(chute)) {
-                System.out.println("Você já chutou essa letra! Tente novamente.");
+                System.out.println("Você já chutou essa letra! Tente colocar outra.");
                 continue;
             }
             chutes.add(chute);
@@ -37,7 +37,7 @@ public class Jogo {
             System.out.println("Palavra: " + palavra.getPalavraComChutes());
 
             if (!this.palavra.getPalavraComChutes().contains("_")) {
-                System.out.println("Parabéns " + this.jogador.getNome() + "! Você venceu!");
+                System.out.println("AEEE " + this.jogador.getNome() + "! Você acertou!");
             } else if (chutes.size() == numeroChutes) {
                 System.out.println("Poxa " + this.jogador.getNome() + " você perdeu! A palavra secreta era: " + palavra.getPalavraSecreta());
             }
